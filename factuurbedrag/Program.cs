@@ -48,32 +48,49 @@ namespace factuurbedrag
         static void Main(string[] args)
         {
             //DECLARATIES
-            decimal  bedragexclbtw;
+            decimal  bedragexclbtw, finankort, mvh, btwbedrag, bedraginclbtw;
             ushort aantaldagennafactgeldig, aantaldagennafact;
-            string bedragexclbtwgeldig;
+            uint bedragexclbtwgeldig;
 
 
             //input
             //VRAAG(het bedrag excl BTW)
             Console.WriteLine("wat is uw bedrag excl BTW");
-            bedragexclbtwgeldig = Console.ReadLine();
+            bedragexclbtwgeldig = uint.Parse( Console.ReadLine());
             // VRAAG(het aantal dagen na factuurdatum waarop de factuur betaald is)
             Console.WriteLine("wat is het aantal dagen na factuurdatum waarop de factuur betaald is?: ");
             aantaldagennafactgeldig = ushort.Parse(Console.ReadLine());
+
             //processing
             //BEREKEN bedrag excl btw(het bedrag dat gegeven is door de persoon)
-            //BEREKEN eventuele finan kort(bedrag excl BTW / 100 * 21)
-            //BEREKEN(bedrag excl btw - finan kort)
-            //BEREKEN BTW bedrag(bedrag excl btw en finan kort / 100 * 21)
-            //BEREKEN bedrag incl btw(bedrag excl btw + bedrag btw)
 
+            //BEREKEN eventuele finan kort(bedrag excl BTW / 100 * 21)
+            if (aantaldagennafactgeldig <= 10)
+            {
+                finankort = bedragexclbtwgeldig / 100 * 2;
+            }
+            else
+            {
+                finankort = 0;
+            }
+            //BEREKEN(bedrag excl btw - finan kort)
+            mvh = bedragexclbtwgeldig - finankort;
+            //BEREKEN BTW bedrag(bedrag excl btw en finan kort / 100 * 21)
+            btwbedrag = (mvh / 100 *21) ;
+            //BEREKEN bedrag incl btw(bedrag excl btw + bedrag btw)
+            bedraginclbtw = bedragexclbtwgeldig + btwbedrag;
             //output
+            //TOON TOT
+            
             //TOON het bedrag exclusief BTW;
+            Console.WriteLine("bedrag excl btw");
+            Console.WriteLine(bedragexclbtwgeldig);
             //TOON - de eventuele financiële korting(in EUR);
             //TOON - het bedrag exclusief BTW verminderd met de financiële korting;
             //TOON - het BTW bedrag;
             //TOON - het bedrag inclusief BTW
-
+            Console.WriteLine("bedraginclbtw");
+            Console.WriteLine(bedraginclbtw);
 
             //wachten
             Console.WriteLine();
