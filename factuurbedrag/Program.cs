@@ -17,7 +17,17 @@
  * VRAAG (het bedrag excl BTW )
  * VRAAG (het aantal dagen na factuurdatum waarop de factuur betaald is)
  * 
+ * BEREKEN bedrag excl btw (het bedrag dat gegeven is door de persoon)
+ * BEREKEN eventuele finan kort (bedrag excl BTW/ 100 *21)
+ * BEREKEN (bedrag excl btw - finan kort)
+ * BEREKEN BTW bedrag (bedrag excl btw en finan kort /100*21)
+ * BEREKEN bedrag incl btw ( bedrag excl btw + bedrag btw)
  * 
+ * TOON het bedrag exclusief BTW;
+ * TOON- de eventuele financiële korting (in EUR);
+ * TOON- het bedrag exclusief BTW verminderd met de financiële korting;
+ * TOON- het BTW bedrag;
+ * TOON- het bedrag inclusief BTW
  */
 
 
