@@ -81,16 +81,31 @@ namespace factuurbedrag
             bedraginclbtw = bedragexclbtwgeldig + btwbedrag;
             //output
             //TOON TOT
-            
+
             //TOON het bedrag exclusief BTW;
-            Console.WriteLine("bedrag excl btw");
-            Console.WriteLine(bedragexclbtwgeldig);
+            
+            Console.WriteLine("bedrag excl btw:");
+            Console.OutputEncoding = Encoding.Default; Console.WriteLine(bedragexclbtwgeldig);
             //TOON - de eventuele financiële korting(in EUR);
+            
+            Console.WriteLine("finan kort:");
+            Console.OutputEncoding = Encoding.Default; Console.WriteLine(finankort);
+
             //TOON - het bedrag exclusief BTW verminderd met de financiële korting;
+           
+            Console.WriteLine("mvh:");
+            Console.OutputEncoding = Encoding.Default; Console.WriteLine(mvh);
+
             //TOON - het BTW bedrag;
+          
+            Console.WriteLine("btw bedrag:");
+            Console.OutputEncoding = Encoding.Default; Console.WriteLine(btwbedrag);
+
             //TOON - het bedrag inclusief BTW
-            Console.WriteLine("bedraginclbtw");
-            Console.WriteLine(bedraginclbtw);
+            
+            Console.WriteLine("bedraginclbtw:");
+            Console.OutputEncoding = Encoding.Default; Console.WriteLine(bedraginclbtw);
+
 
             //wachten
             Console.WriteLine();
